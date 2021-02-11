@@ -25,7 +25,9 @@ void checkPassword() {
   specialChars.insert('$');
 
   cout << "Please enter your password: ";
-  getline(cin, password);
+  getline(
+      cin,
+      password);  // Read the whole line as password can contain white spaces
 
   for (int i = 0; i < password.length(); i++) {
     char c = password.at(i);
@@ -43,6 +45,7 @@ void checkPassword() {
     }
   }
 
+  // Construct error messages
   if (password.length() < 8) {
     message.append(
         "Error: your password should be at least 8 characters long.\n");
